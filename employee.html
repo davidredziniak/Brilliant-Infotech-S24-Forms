@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Employee Web Page</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+        // Inject event listeners into elements when they fully load
+        document.addEventListener('DOMContentLoaded', function () {
+            
             // Check id input
-            $('#eid').on('keypress', function (event) {
+            document.getElementById('eid').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[0-9]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-                if (!regex.test(key) || $(this).val().length >= 8) {
+                if (!regex.test(key) || this.value.length >= 8) {
                     event.preventDefault();
                     return false;
                 }
             });
 
             // Check name input
-            $('#ename').on('keypress', function (event) {
+            document.getElementById('ename').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[a-zA-Z ]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key)) {
@@ -30,7 +31,7 @@
             });
 
             // Check email input
-            $('#eemail').on('keypress', function (event) {
+            document.getElementById('eemail').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[a-zA-Z0-9._%+@\-]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key)) {
@@ -40,7 +41,7 @@
             });
 
             // Check SSN input, limit to numbers and 4 character length
-            $('#ssn').on('keypress', function (event) {
+            document.getElementById('ssn').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[0-9]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key) || $(this).val().length >= 4) {
@@ -48,7 +49,6 @@
                     return false;
                 }
             });
-
         });
         
         function validate(form) {

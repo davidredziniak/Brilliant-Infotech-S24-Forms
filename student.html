@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo Student Web Page</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
+        // Inject event listeners into elements when they fully load
+        document.addEventListener('DOMContentLoaded', function () {
+            
             // Check id input
-            $('#sid').on('keypress', function (event) {
+            document.getElementById('sid').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[0-9]+$");
+                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+                if (!regex.test(key) || this.value.length >= 8) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+
+            // Check name input
+            document.getElementById('sname').addEventListener('keypress', function (event) {
+                var regex = new RegExp("^[a-zA-Z ]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key)) {
                     event.preventDefault();
@@ -20,18 +31,8 @@
             });
 
             // Check email input
-            $('#semail').on('keypress', function (event) {
+            document.getElementById('semail').addEventListener('keypress', function (event) {
                 var regex = new RegExp("^[a-zA-Z0-9._%+@\-]+$");
-                var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-                if (!regex.test(key)) {
-                    event.preventDefault();
-                    return false;
-                }
-            });
-
-            // Check name input
-            $('#sname').on('keypress', function (event) {
-                var regex = new RegExp("^[a-zA-Z ]+$");
                 var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
                 if (!regex.test(key)) {
                     event.preventDefault();
