@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Student Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Student Form</h2>
+        <!-- Each field ends in a <br> tag to allow readability and proper formatting -->
+        <!-- Each label has a 'for' attribute to indicate which element's ID it is bound to for accessbility purposes. -->
+        <form>
+            <!-- Student ID uses an input element with type 'number' to indicate that input should only be numbers -->
+            <div class="form-input-item">
+                <label for="sid">ID</label>
+                <br>
+                <input type="number" id="sid" class="form-user-input" placeholder="Enter your ID.." required>
+                <br>
+            </div>
+            <!-- Student Name uses an input element with type 'text' to indicate that input only allows for letters using a specified pattern -->
+            <div class="form-input-item">
+                <label for="sname">Name</label><br>
+                <input type="text" id="sname" class="form-user-input" pattern="[A-Za-z ]+"
+                    placeholder="Enter your full name..." required>
+                <br>
+            </div>
+            <!-- Student email uses an input element with type 'text' to indicate that input only allows for letters using a specified email pattern -->
+            <div class="form-input-item">
+                <label for="semail">Email</label>
+                <br>
+                <input type="text" id="semail" class="form-user-input"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" placeholder="Enter your email..."
+                    required>
+                <br>
+            </div>
+            <!-- Major uses a select element to indicate a drop down menu and allows for pre-defined options for the user to select -->
+            <div class="form-input-item">
+                <label for="major">Major</label>
+                <br>
+                <select id="major" class="form-drop-down" name="major" required>
+                    <!-- The value attribute is defined and will be sent to the server -->
+                    <option value="">Please choose</option>
+                    <option value="it">Information Technology</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="math">Mathematics</option>
+                    <option value="psych">Psychology</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+            </div>
+            <!-- Gender uses input elements with type 'radio' to indicate a radio button a user can select. It is required to select at least one input -->
+            <div class="form-input-item">
+                <label>Gender</label>
+                <br>
+                <div class="form-input-item">
+                    <input type="radio" name="gender" value="male" required>
+                    <label>Male</label>
+                    <input type="radio" name="gender" value="female">
+                    <label>Female</label>
+                    <input type="radio" name="gender" value="other">
+                    <label>Other</label>
+                </div>
+            </div>
+            <!-- Submit button to allow the client to be able to send all user input to the server for processing -->
+            <div class="form-input-item">
+                <input type="submit" class="form-submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

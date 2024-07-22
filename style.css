@@ -1,0 +1,134 @@
+html {
+    min-height: 100%;
+}
+
+/* General styles for body */
+body {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    background: linear-gradient(to bottom, #8818ff, #2575fc);
+    padding: 20px;
+}
+
+/* Center header horizontally */
+h2 {
+    text-align: center;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+                 0 0 10px rgba(255, 107, 107, 0.5),
+                 0 0 15px rgba(249, 77, 106, 0.5),
+                 0 0 20px rgba(200, 77, 77, 0.5),
+                 0 0 25px #6a11cb;
+}
+
+/* Container styles */
+.form-container {
+    border-radius: 15px;
+    background: gray;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Add padding to each item included in the form container */
+.form-input-item {
+    padding: 10px;
+    margin-left: 25px;
+}
+
+/* Style input text boxes */
+.form-user-input,
+.form-user-ssn,
+.form-drop-down {
+    width: calc(100% - 30px);
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    color: gray;
+}
+
+/* Style the SSN input element */
+.form-user-ssn {
+    width: calc(50% - 30px);
+}
+
+
+/* Create a table container to properly separate label and input element */ 
+.ssn-container {
+    padding: 5px;
+    display: table;
+    width: calc(100% - 30px);
+    margin-left: 30px;
+
+}
+
+/* Style the SSN label cell */
+.ssn-left {
+    display: table-cell;
+    text-align: left;
+}
+
+/* Style the SSN input cell */
+.ssn-right {
+    display: table-cell;
+    text-align: right;
+    padding-right: 45px;
+}
+
+/* Style the drop down menu (select element) */
+.form-drop-down {
+    appearance: none;
+    background: rgb(255, 255, 255);
+}
+
+/* Style the submit button */
+.form-submit {
+    background-color: #6a11cb;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    width: 50%;
+    margin: 10px auto;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Color change effect when user hovers over the submit button */
+.form-submit:hover {
+    background-color: #4e0fbd;
+}
+
+/* Style radio buttons and labels */
+.form-input-item input[type="radio"] {
+    margin-right: 5%;
+}
+
+.form-input-item label {
+    margin-right: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-user-input,
+    .form-user-ssn,
+    .form-drop-down {
+        width: calc(100% - 20px);
+    }
+
+    .form-submit {
+        width: 80%;
+    }
+}

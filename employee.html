@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Employee Web Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Employee Form</h2>
+        <!-- Each field ends in a <br> tag to allow readability and proper formatting -->
+        <!-- Each label has a 'for' attribute to indicate which element's ID it is bound to for accessibility purposes -->
+        <form action="/submit">
+            <!-- ID uses an input element with type 'text' in order to use a pattern that requires 8 numbers-->
+            <div class="form-input-item">
+                <label for="eid">ID</label>
+                <input type="text" id="eid" class="form-user-input" pattern="[0-9]{8}" placeholder="Your 8 digit Employee ID.." required>
+                <br>
+            </div>
+            <!-- Name uses an input element with type 'text' to indicate that input only allows for text with a specified pattern to allow for only letters and spaces-->
+            <div class="form-input-item">
+                <label for="ename">Full Name</label>
+                <input type="text" id="ename" class="form-user-input" pattern="[A-Za-z ]+"
+                    placeholder="Enter your full name..." required>
+                <br>
+            </div>
+            <!-- Email uses an input element with type 'email' to indicate that input only allows for emails (predefined pattern in HTML5) -->
+            <div class="form-input-item">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-user-input" placeholder="Enter your email..."
+                    required>
+                <br>
+            </div>
+            <!-- Department uses a select element to indicate a drop down menu and allows for pre-defined options for the user to select -->
+            <div class="form-input-item">
+                <label for="department">Department</label>
+                <select id="department" class="form-drop-down" name="department" required>
+                    <!-- The value attribute is defined and will be sent to the server -->
+                    <option value="">Please choose</option>
+                    <option value="hr">Human Resources</option>
+                    <option value="op">Operations</option>
+                    <option value="fin">Finance</option>
+                    <option value="mark">Marketing</option>
+                    <option value="it">Information Technology</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+            </div>
+            <!-- Gender uses a select element to indicate a drop down menu and allows for pre-defined options for the user to select -->
+            <div class="form-input-item">
+                <label for="gender">Gender</label>
+                <select id="gender" class="form-drop-down" name="gender" required>
+                    <!-- The value attribute is defined and will be sent to the server -->
+                    <option value="">Please choose</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+            </div>
+            <!-- SSN uses an input element with type 'password' to indicate that input is hidden, pattern requires four numbers -->
+            <div class="ssn-container">
+                <label for="ssn" class="ssn-left">Last four of SSN</label>
+                <div class="ssn-right">
+                    <input type="password" id="ssn" class="form-user-ssn" pattern="[0-9]{4}" placeholder="ex. 4839" required>
+                </div>
+                <br>
+            </div>
+            <!-- Submit button to allow the client to be able to send all user input to the server for processing -->
+            <div class="form-input-item">
+                <input type="submit" class="form-submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
